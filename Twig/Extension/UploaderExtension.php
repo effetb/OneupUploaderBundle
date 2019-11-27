@@ -3,10 +3,8 @@
 namespace Oneup\UploaderBundle\Twig\Extension;
 
 use Oneup\UploaderBundle\Templating\Helper\UploaderHelper;
-use Twig\Extension\AbstractExtension;
-use Twig\TwigFunction;
 
-class UploaderExtension extends AbstractExtension
+class UploaderExtension extends \Twig_Extension
 {
     protected $helper;
 
@@ -23,11 +21,11 @@ class UploaderExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction('oneup_uploader_endpoint', [$this, 'endpoint']),
-            new TwigFunction('oneup_uploader_progress', [$this, 'progress']),
-            new TwigFunction('oneup_uploader_cancel', [$this, 'cancel']),
-            new TwigFunction('oneup_uploader_upload_key', [$this, 'uploadKey']),
-            new TwigFunction('oneup_uploader_maxsize', [$this, 'maxSize']),
+            new \Twig_SimpleFunction('oneup_uploader_endpoint', [$this, 'endpoint']),
+            new \Twig_SimpleFunction('oneup_uploader_progress', [$this, 'progress']),
+            new \Twig_SimpleFunction('oneup_uploader_cancel', [$this, 'cancel']),
+            new \Twig_SimpleFunction('oneup_uploader_upload_key', [$this, 'uploadKey']),
+            new \Twig_SimpleFunction('oneup_uploader_maxsize', [$this, 'maxSize']),
         ];
     }
 
